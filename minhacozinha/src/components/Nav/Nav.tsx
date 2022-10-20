@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 
 function Nav() {
-    const isDesktop = useBreakpointValue({ base: false, lg: true });
     return (
         <Box as="nav" bg="bg-surface" boxShadow={useColorModeValue("sm", "sm-dark")}>
             <Container py={{ base: "4", lg: "5" }}>
