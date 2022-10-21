@@ -1,9 +1,10 @@
 import { Stack, Image } from "@chakra-ui/react";
+import Cozinheiro from "../images/cozinheiro.png";
 
 export default function Home() {
   return (
-    <Stack>
-      <Image mt="100px" src="./images/cozinheiro.jpg" alt="cozinheiro" />
+    <Stack mt={1000}>
+      <Image w={500} mx="auto" src={Cozinheiro} alt="cozinheiro" />
     </Stack>
   );
 }
