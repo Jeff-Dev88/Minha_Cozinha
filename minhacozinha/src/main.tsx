@@ -9,7 +9,11 @@ import Home from "./pages/Home";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ChakraProvider>
-      <Box bgGradient="linear(to-r, gray.300, yellow.400, yellow.200)">
+      <Box
+        bgGradient="linear(to-r, yellow.500, yellow.400, yellow.200)"
+        w="100%"
+        h="100%"
+      >
         <Nav />
         <Home />
         <App />
