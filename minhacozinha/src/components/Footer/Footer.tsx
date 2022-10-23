@@ -2,16 +2,17 @@ import {
   Box,
   chakra,
   Container,
-  Link,
   Stack,
   Text,
   useColorModeValue,
   VisuallyHidden,
   Image,
+  Button,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { ReactNode } from "react";
 import LogoCozinha from "../../images/logo.png";
+import { Link } from "react-scroll";
 
 const Logo = () => {
   return <Image w={50} src={LogoCozinha} alt="logo" />;
@@ -51,7 +52,7 @@ const SocialButton = ({
 
 export default function Footer() {
   return (
-    <Box bgGradient="linear(to-r, yellow.500, yellow.400, yellow.200)">
+    <Box bgGradient="linear(to-b, yellow.200, purple.400, purple.500)">
       <Container
         as={Stack}
         maxW={"6xl"}
@@ -62,15 +63,51 @@ export default function Footer() {
       >
         <Logo />
         <Stack direction={"row"} spacing={6}>
-          <Link href={"#"}>Início</Link>
-          <Link href={"#"}>Receitas</Link>
-          <Link href={"#"}>Contato</Link>
-          <Link href={"#"}>Sobre</Link>
+          <Link
+            activeClass="active"
+            to="inicio"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            <Button variant="ghost">Início</Button>
+          </Link>
+          <Link
+            activeClass="active"
+            to="pratos"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            <Button variant="ghost">Pratos</Button>
+          </Link>
+          <Link
+            activeClass="active"
+            to="contato"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            <Button variant="ghost">Contato</Button>
+          </Link>
+          <Link
+            activeClass="active"
+            to="sobre"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            <Button variant="ghost">Sobre</Button>
+          </Link>
         </Stack>
       </Container>
 
       <Box
-        borderTopWidth={1}
+        borderTopWidth={0}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.700")}
       >
@@ -78,12 +115,13 @@ export default function Footer() {
           as={Stack}
           maxW={"6xl"}
           py={4}
+          pb={5}
           direction={{ base: "column", md: "row" }}
           spacing={4}
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
+          <Text>© 2022 Minha Cozinha. Todos os direitos reservados.</Text>
           <Stack direction={"row"} spacing={6}>
             <SocialButton label={"Twitter"} href={"#"}>
               <FaTwitter />

@@ -1,32 +1,60 @@
-import {
-    Box,
-    Button,
-    ButtonGroup,
-    Container,
-    Flex,
-    HStack,
-    IconButton,
-    useBreakpointValue,
-    useColorModeValue,
-} from "@chakra-ui/react";
+import { Stack, Button, Container } from "@chakra-ui/react";
+import { Link } from "react-scroll";
 
 function Nav() {
-    return (
-        <Box as="nav" bg="bg-surface" boxShadow={useColorModeValue("sm", "sm-dark")}>
-            <Container py={{ base: "4", lg: "5" }}>
-                <HStack spacing="10" justify="space-between">
-                    <Flex justify="space-between" flex="1">
-                        <ButtonGroup variant="link" spacing="8">
-                            <Button>Início</Button>
-                            <Button>Receitas</Button>
-                            <Button>Contato</Button>
-                            <Button>Sobre</Button>
-                        </ButtonGroup>
-                    </Flex>
-                </HStack>
-            </Container>
-        </Box>
-    );
+  return (
+    <Container
+      as={Stack}
+      maxW={"6xl"}
+      py={4}
+      spacing={4}
+      justify={"center"}
+      align={"center"}
+    >
+      <Stack direction={"row"} spacing={6}>
+        <Link
+          activeClass="active"
+          to="inicio"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <Button variant="ghost">Início</Button>
+        </Link>
+        <Link
+          activeClass="active"
+          to="pratos"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <Button variant="ghost">Pratos</Button>
+        </Link>
+        <Link
+          activeClass="active"
+          to="contato"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <Button variant="ghost">Contato</Button>
+        </Link>
+        <Link
+          activeClass="active"
+          to="sobre"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <Button variant="ghost">Sobre</Button>
+        </Link>
+      </Stack>
+    </Container>
+  );
 }
 
 export default Nav;
